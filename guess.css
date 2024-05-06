@@ -1,0 +1,168 @@
+*{
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #0a0a0a;
+}
+body {
+    margin: 0;
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    margin: 0 0 50px;
+    background-color: white;
+    color: #cd9805;
+}
+.guess-game {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: center;
+    .game-area {
+        .inputs{
+            > div {
+                margin-bottom: 20px ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                    margin-right: 10px;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+            }
+            .disabled-inputs {
+                opacity: .5;
+                pointer-events: none;
+            }
+            input {
+                width:50px;
+                height: 50px;
+                margin-left: 4px;
+                font-size: 30px;
+                text-align: center;
+                border: none;
+                background-color: #fff;
+                border-bottom: 2px solid var(--primary-color);
+                &:focus {
+                    outline-color: #ccc;
+                }
+                &.in-place {
+                    background-color: rgb(95, 250, 95);
+                    border: rgb(95, 250, 95);
+                    color: #fff;
+                }
+                &.not-in-place {
+                    background-color: rgb(253, 53, 53);
+                    border: rgb(253, 53, 53);
+                    color: #fff;
+                }
+                &.no {
+                    background-color: #0a0a0a; 
+                    border: #0a0a0a;
+                    color: #fff;
+                }
+            }
+        }
+        .control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 380px;
+            margin: 30px auto;
+            gap: 20px;
+            .check {
+                background-color:#cd9805;
+                flex: 2;
+            }
+            .hint {
+                background-color: rgb(8, 145, 8);
+                flex: 1;
+            }
+            button {
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                font-size: 25px;
+                padding: 10px 20px;
+                color: #fff;
+            }
+            .finish {
+                opacity: .5;
+                pointer-events: none;
+                
+            }
+        }
+    }
+    .key-colors {
+        .key-color{
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: white;
+            margin-bottom: 10px;
+            .key {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 10px;
+                &.in-place {
+                    background-color: rgb(95, 250, 95);
+                }
+                &.not-in-place {
+                    background-color: rgb(253, 53, 53);
+                }
+                &.no {
+                    background-color: #0a0a0a; 
+                }
+            }
+            .key-text {
+                font-weight: bold;
+            }
+        }
+    }
+}
+.message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    span {
+        font-weight: bold;
+        display: block;
+        font-size: 40px;
+        color: #2c7805;
+        margin-top: 10px;
+        text-transform: capitalize;
+    }
+    p {
+        margin-top: 15px;
+    }
+}
+footer {
+    bottom: 0;
+    left:0;
+    text-align: center;
+    background-color: #444;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+}
+
+@media screen and (max-width: 670px) {
+    .guess-game {
+        flex-direction: column;
+        align-items: center;
+        .game-area {
+            .control {
+                width: 340px;
+            }
+        }
+    }
+}
